@@ -28,17 +28,17 @@ Using Tableau, we crafted interactive visualizations showcasing crime trends ove
 
 ### Exploaratory Data Analysis
 - **Key Insights**
-**Temporal Trends:**
+  - **Temporal Trends:**
 Crime events increased from 2014 to 2023, with fluctuations suggesting influencing factors.
-**Major Crime Categories:**
+  - **Major Crime Categories:**
 Assault is most frequent, followed by Break and Enter, Auto Theft, Robbery, and Theft Over.
-**Police Division Analysis:**
+  - **Police Division Analysis:**
 Certain divisions show significantly higher crime rates, requiring targeted interventions.
-**Hourly Distribution:**
+  - **Hourly Distribution:**
 Peak and off-peak hours of criminal activity identified for resource deployment.
-**Neighborhood Crime Rates:**
+  - **Neighborhood Crime Rates:**
 Assault dominant across neighborhoods, with localized variations in other crime types.
-**Premises Type and Day of Week Trend Analysis:**
+  - **Premises Type and Day of Week Trend Analysis:**
 Outdoor areas, apartments, and commercial establishments have higher crime rates with peaks on Fridays and weekends.
 
 
