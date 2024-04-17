@@ -1,2 +1,2 @@
-# Crime-Rate-Analysis-in-Toronto
-Crime Rate Analysis in Toronto, Canada
+# Crime-Analysis-in-Toronto
+In the bustling city of Toronto, understanding and mitigating crime trends is of paramount importance for maintaining public safety and well-being. Our project endeavors to delve deep into the rich tapestry of crime data within Toronto, employing advanced data analytics to discern patterns, identify hotspots, and uncover the underlying factors influencing crime rates. By leveraging machine learning techniques, we aim to predict crime classes, providing law enforcement agencies and policymakers with actionable insights to allocate resources effectively and develop targeted interventions. Through meticulous analysis and interpretation of extensive crime data, our endeavor seeks to contribute to a safer and more secure environment for all residents and visitors of Toronto.
