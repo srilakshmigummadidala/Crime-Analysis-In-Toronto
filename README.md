@@ -41,6 +41,20 @@ Assault dominant across neighborhoods, with localized variations in other crime 
   - **Premises Type and Day of Week Trend Analysis:**
 Outdoor areas, apartments, and commercial establishments have higher crime rates with peaks on Fridays and weekends.
 
+### Instructions to Viewers:
+
+- **Repository Cloning:**
+ Begin by cloning this repository onto your local machine to access all project files and resources.
+
+- **Visualization:**
+ Dive into the interactive visualizations crafted using Tableau to delve deeper into the analysis of crime in the Toronto area. Access these visualizations either through our Python notebook file or the dedicated Tableau file.
+
+- **Data Deployment:**
+Locate the deployment files within the specified directory and import them into your preferred IDE such as PyCharm or related tools. This will enable you to examine our deployment setup firsthand and gain practical experience.
+
+- **Recommendations:**
+Delve into our comprehensive project report for an extensive walkthrough of this capstone project. Gain valuable insights into our meticulous analysis of crime in Toronto, including detailed findings and recommendations.
+
 
 
 
