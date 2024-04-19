@@ -42,7 +42,7 @@ Assault dominant across neighborhoods, with localized variations in other crime 
 Outdoor areas, apartments, and commercial establishments have higher crime rates with peaks on Fridays and weekends.
 
 ## Machine Learning Algorithms:
-  - This project incorporates a diverse array of machine learning algorithms, including the Random Forest Classifier as the foundational model. We have further bolstered our approach by leveraging Lazy Predict Classifier models, as well as integrating advanced techniques such as Fully Connected Neural Networks and Time Series Analysis into our methodology.
+This project incorporates a diverse array of machine learning algorithms, including the Random Forest Classifier as the foundational model. We have further bolstered our approach by leveraging Lazy Predict Classifier models, as well as integrating advanced techniques such as Fully Connected Neural Networks and Time Series Analysis into our methodology.
 
 ## Instructions to Viewers:
 
