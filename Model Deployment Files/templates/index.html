@@ -40,6 +40,7 @@
             margin-bottom: 5px;
         }
         input[type="number"],
+        input[type="text"],
         select {
             width: 100%;
             padding: 10px;
@@ -76,107 +77,48 @@
     <div class="container">
         <h2>Major Crime Category Prediction</h2>
         <form action="/predict" method="post">
+            <!-- Report Details Section -->
             <div class="form-group">
                 <label for="REPORT_YEAR"><b>Report Year:</b></label>
-                <input type="number" id="REPORT_YEAR" name="REPORT_YEAR" step="1" min="2014">
+                <input type="number" id="REPORT_YEAR" name="REPORT_YEAR" step="1" min="2014" onchange="updateReportDetails()">
             </div>
             <div class="form-group">
                 <label for="REPORT_MONTH"><b>Report Month:</b></label>
-                <select id="REPORT_MONTH" name="REPORT_MONTH">
-                    <option value="January">January</option>
-                    <option value="February">February</option>
-                    <option value="March">March</option>
-                    <option value="April">April</option>
-                    <option value="May">May</option>
-                    <option value="June">June</option>
-                    <option value="July">July</option>
-                    <option value="August">August</option>
-                    <option value="September">September</option>
-                    <option value="October">October</option>
-                    <option value="November">November</option>
-                    <option value="December">December</option>
+                <select id="REPORT_MONTH" name="REPORT_MONTH" onchange="updateReportDetails()">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="REPORT_DAY"><b>Report Day:</b></label>
-                <input type="number" id="REPORT_DAY" name="REPORT_DAY" step="1" min="1" max="31">
+                <input type="number" id="REPORT_DAY" name="REPORT_DAY" step="1" min="1" max="31" onchange="updateReportDetails()">
             </div>
             <div class="form-group">
                 <label for="REPORT_DOY"><b>Report Day of Year:</b></label>
-                <input type="number" id="REPORT_DOY" name="REPORT_DOY" step="1" min="1" max="366">
+                <input type="number" id="REPORT_DOY" name="REPORT_DOY" step="1" min="1" max="366" readonly>
             </div>
             <div class="form-group">
                 <label for="REPORT_DOW"><b>Report Day of Week:</b></label>
-                <select id="REPORT_DOW" name="REPORT_DOW">
-                    <option value="Monday">Monday</option>
-                    <option value="Tuesday">Tuesday</option>
-                    <option value="Wednesday">Wednesday</option>
-                    <option value="Thursday">Thursday</option>
-                    <option value="Friday">Friday</option>
-                    <option value="Saturday">Saturday</option>
-                    <option value="Sunday">Sunday</option>
-                </select>
+                <input type="text" id="REPORT_DOW" name="REPORT_DOW" readonly>
             </div>
             <div class="form-group">
                 <label for="REPORT_HOUR"><b>Report Hour:</b></label>
                 <input type="number" id="REPORT_HOUR" name="REPORT_HOUR" step="1" min="0" max="23">
             </div>
             <div class="form-group">
-                <label for="OCC_YEAR"><b>Occurrence Year:</b></label>
-                <input type="number" id="OCC_YEAR" name="OCC_YEAR" step="1" min="2014">
-            </div>
-
-            <div class="form-group">
-                <label for="OCC_MONTH"><b>Occurrence Month:</b></label>
-                <select id="OCC_MONTH" name="OCC_MONTH">
-                    <option value="January">January</option>
-                    <option value="February">February</option>
-                    <option value="March">March</option>
-                    <option value="April">April</option>
-                    <option value="May">May</option>
-                    <option value="June">June</option>
-                    <option value="July">July</option>
-                    <option value="August">August</option>
-                    <option value="September">September</option>
-                    <option value="October">October</option>
-                    <option value="November">November</option>
-                    <option value="December">December</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="OCC_DAY"><b>Occurrence Day:</b></label>
-                <input type="number" id="OCC_DAY" name="OCC_DAY" step="1" min="1" max="31">
-            </div>
-
-            <div class="form-group">
-                <label for="OCC_DOY"><b>Occurrence Day of Year:</b></label>
-                <input type="number" id="OCC_DOY" name="OCC_DOY" step="1" min="1" max="366">
-            </div>
-
-            <div class="form-group">
-                <label for="OCC_DOW"><b>Occurrence Day of Week:</b></label>
-                <select id="OCC_DOW" name="OCC_DOW">
-                    <option value="Monday">Monday</option>
-                    <option value="Tuesday">Tuesday</option>
-                    <option value="Wednesday">Wednesday</option>
-                    <option value="Thursday">Thursday</option>
-                    <option value="Friday">Friday</option>
-                    <option value="Saturday">Saturday</option>
-                    <option value="Sunday">Sunday</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="OCC_HOUR"><b>Occurrence Hour:</b></label>
-                <input type="number" id="OCC_HOUR" name="OCC_HOUR" step="1" min="0" max="23">
-            </div>
-
-            <div class="form-group">
                 <label for="DIVISION"><b>Division:</b></label>
-                <input type="text" id="DIVISION" name="DIVISION" >
+                <input type="text" id="DIVISION" name="DIVISION">
             </div>
-
             <div class="form-group">
                 <label for="PREMISES_TYPE"><b>Premises Type:</b></label>
                 <select id="PREMISES_TYPE" name="PREMISES_TYPE">
@@ -189,17 +131,54 @@
                     <option value="Other">Other</option>
                 </select>
             </div>
-
             <div class="form-group">
                 <label for="HOOD_158"><b>Neighborhood (HOOD_158):</b></label>
                 <input type="number" id="HOOD_158" name="HOOD_158" step="1">
             </div>
-
             <div class="form-group">
                 <label for="HOOD_140"><b>Neighborhood (HOOD_140):</b></label>
                 <input type="number" id="HOOD_140" name="HOOD_140" step="1">
             </div>
 
+            <!-- Occurrence Details Section -->
+            <div class="form-group">
+                <label for="OCC_YEAR"><b>Occurrence Year:</b></label>
+                <input type="number" id="OCC_YEAR" name="OCC_YEAR" step="1" min="2014" onchange="updateOccurrenceDetails()">
+            </div>
+            <div class="form-group">
+                <label for="OCC_MONTH"><b>Occurrence Month:</b></label>
+                <select id="OCC_MONTH" name="OCC_MONTH" onchange="updateOccurrenceDetails()">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="OCC_DAY"><b>Occurrence Day:</b></label>
+                <input type="number" id="OCC_DAY" name="OCC_DAY" step="1" min="1" max="31" onchange="updateOccurrenceDetails()">
+            </div>
+            <div class="form-group">
+                <label for="OCC_DOY"><b>Occurrence Day of Year:</b></label>
+                <input type="number" id="OCC_DOY" name="OCC_DOY" step="1" min="1" max="366" readonly>
+            </div>
+            <div class="form-group">
+                <label for="OCC_DOW"><b>Occurrence Day of Week:</b></label>
+                <input type="text" id="OCC_DOW" name="OCC_DOW" readonly>
+            </div>
+            <div class="form-group">
+                <label for="OCC_HOUR"><b>Occurrence Hour:</b></label>
+                <input type="number" id="OCC_HOUR" name="OCC_HOUR" step="1" min="0" max="23">
+            </div>
+            <!-- Prediction Result Section -->
             <input type="submit" value="Crime Category Prediction">
         </form>
     </div>
@@ -209,5 +188,34 @@
         <p>{{ prediction_text }}</p>
         {% endif %}
     </div>
+
+    <script>
+        function updateReportDetails() {
+        var reportYear = document.getElementById("REPORT_YEAR").value;
+        var reportMonth = document.getElementById("REPORT_MONTH").value;
+        var reportDay = document.getElementById("REPORT_DAY").value;
+        var reportDate = new Date(reportYear, reportMonth - 1, reportDay);
+        var startOfYear = new Date(reportYear, 0, 0); // First day of the year
+        var reportDayOfYear = Math.ceil((reportDate - startOfYear) / 86400000); // Milliseconds per day
+        document.getElementById("REPORT_DOY").value = reportDayOfYear;
+        var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var reportDayOfWeek = daysOfWeek[reportDate.getDay()];
+        document.getElementById("REPORT_DOW").value = reportDayOfWeek;
+        }
+
+        function updateOccurrenceDetails() {
+        var occYear = document.getElementById("OCC_YEAR").value;
+        var occMonth = document.getElementById("OCC_MONTH").value;
+        var occDay = document.getElementById("OCC_DAY").value;
+        var occDate = new Date(occYear, occMonth - 1, occDay);
+        var startOfYear = new Date(occYear, 0, 0); // First day of the year
+        var occDayOfYear = Math.ceil((occDate - startOfYear) / 86400000); // Milliseconds per day
+        document.getElementById("OCC_DOY").value = occDayOfYear;
+        var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var occDayOfWeek = daysOfWeek[occDate.getDay()];
+        document.getElementById("OCC_DOW").value = occDayOfWeek;
+        }
+
+    </script>
 </body>
 </html>

@@ -1,3 +1,4 @@
 *.pkl filter=lfs diff=lfs merge=lfs -text
 *.cs filter=lfs diff=lfs merge=lfs -text
 *.csv filter=lfs diff=lfs merge=lfs -text
+*.rfl filter=lfs diff=lfs merge=lfs -text
